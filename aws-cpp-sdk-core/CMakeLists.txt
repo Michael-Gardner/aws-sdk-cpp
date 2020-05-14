@@ -493,9 +493,9 @@ endif()
 
 target_link_libraries(${PROJECT_NAME} PRIVATE ${PLATFORM_DEP_LIBS} ${CLIENT_LIBS} ${CRYPTO_LIBS} ${AWS_SDK_ADDITIONAL_LIBRARIES})
 
-find_package(aws-c-event-stream REQUIRED)
+#find_package(aws-c-event-stream REQUIRED)
 
-target_link_libraries(${PROJECT_NAME} PUBLIC AWS::aws-c-event-stream)
+target_link_libraries(${PROJECT_NAME} PUBLIC aws-c-event-stream)
 
 
 if(USE_WINDOWS_DLL_SEMANTICS)
@@ -513,7 +513,6 @@ set_compiler_warnings(${PROJECT_NAME})
 if(SIMPLE_INSTALL)
     install (
         TARGETS ${PROJECT_NAME}
-        EXPORT "${PROJECT_NAME}-targets"
         ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
         LIBRARY DESTINATION ${LIBRARY_DIRECTORY}
         RUNTIME DESTINATION ${BINARY_DIRECTORY}
@@ -589,5 +588,5 @@ elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
   install (FILES ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/crypto/commoncrypto)
 endif()
 
-do_packaging()
+#do_packaging()
 

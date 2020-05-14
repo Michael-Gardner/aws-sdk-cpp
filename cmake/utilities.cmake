@@ -66,7 +66,7 @@ macro(do_packaging)
             COMPATIBILITY AnyNewerVersion
         )
 
-        export(EXPORT "${PROJECT_NAME}-targets"
+    export(EXPORT "${PROJECT_NAME}-targets"
             FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-targets.cmake"
         )
 

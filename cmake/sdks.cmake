@@ -235,8 +235,8 @@ function(add_sdks)
     endif()
 
     # the catch-all config needs to list all the targets in a dependency-sorted order
-    include(dependencies)
-    sort_links(EXPORTS)
+    #include(dependencies)
+    #sort_links(EXPORTS)
 
     # make an everything config by just including all the individual configs
     file(WRITE ${CMAKE_BINARY_DIR}/aws-sdk-cpp-config.cmake "")
